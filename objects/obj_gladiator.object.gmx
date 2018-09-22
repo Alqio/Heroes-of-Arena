@@ -40,6 +40,56 @@ dodge = 0
 
 owner = noone
 turn_used = false
+
+name = "JaakkO"
+
+names = ds_list_create()
+ds_list_add(names, 
+"Gwerth",
+"Salama",
+"Hermo",
+"Jaaggo",
+"Eila",
+"Nymthon",
+"Foxie",
+"Har'gth",
+"Maija",
+"Kisdds",
+"Deroza",
+"Maximus",
+"Hermimus",
+"Marthak",
+"Gink")
+
+ds_list_shuffle(names)
+
+name = ds_list_find_value(names, 0)
+
+ds_list_destroy(names)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>fight_bonuses = instance_create(x,y, obj_attack_stats)
+
+sprite_index = choose(spr_gladiator, spr_gladiator2)
 </string>
           </argument>
         </arguments>
@@ -71,7 +121,8 @@ if (my_turn) {
     draw_set_color(c_red)
     draw_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, true)
 }
-draw_text(x,y,string(spd))
+draw_set_font(fnt_small)
+draw_text(x,y,name)
 </string>
           </argument>
         </arguments>

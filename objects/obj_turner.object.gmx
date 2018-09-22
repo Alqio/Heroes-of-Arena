@@ -97,6 +97,76 @@ with (turn) {
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw attack queue
+
+next = ds_priority_find_max(gladiators)
+
+if (ds_priority_size(gladiators) &gt; 0 &amp;&amp; next != noone) {
+    draw_set_font(fnt_small)
+    draw_text(20, room_height - 40, next.name)
+    //draw_sprite(object_get_sprite(next), 0, 20, room_height - 20)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="87">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>min_value = ds_priority_find_min(gladiators).spd
+
+ds_priority_add(gladiators, turn.id, min_value - 1)
+with (turn) {
+    my_turn = false
+}
+
+if (ds_priority_size(gladiators) != 0) {
+    turn = ds_priority_delete_max(gladiators)
+} else {
+    script_execute(scr_fill_gladiators_queue, gladiators)
+    turn = ds_priority_delete_max(gladiators)    
+}
+
+with (turn) {
+    my_turn = true
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="10" enumb="32">
       <action>
         <libid>1</libid>
