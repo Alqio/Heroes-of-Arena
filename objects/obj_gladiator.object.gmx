@@ -41,6 +41,8 @@ dodge = 0
 owner = noone
 turn_used = false
 
+side = "friendly"
+
 name = "JaakkO"
 
 names = ds_list_create()
@@ -119,7 +121,7 @@ if (my_turn) {
     var h = sprite_get_height(sprite_index)
     
     draw_set_color(c_red)
-    draw_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, true)
+    draw_rectangle(x, y, x + w, y + h, true)
 }
 draw_set_font(fnt_small)
 draw_text(x,y,name)

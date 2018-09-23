@@ -677,5 +677,17 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
-  <ConfigConstants/>
+  <ConfigConstants>
+    <constants number="9">
+      <constant name="GRID_SIZE">32</constant>
+      <constant name="NORTH">1</constant>
+      <constant name="NORTH_EAST">2</constant>
+      <constant name="EAST">5</constant>
+      <constant name="SOUTH_EAST">8</constant>
+      <constant name="SOUTH">7</constant>
+      <constant name="SOUTH_WEST">6</constant>
+      <constant name="WEST">3</constant>
+      <constant name="NORTH_WEST">0</constant>
+    </constants>
+  </ConfigConstants>
 </Config>

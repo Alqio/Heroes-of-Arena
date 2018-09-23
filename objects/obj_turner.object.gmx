@@ -30,6 +30,7 @@
 turn = noone
 turn_number = 0
 max_turns = ds_priority_size(gladiators)
+global.turn = turn
 </string>
           </argument>
         </arguments>
@@ -92,6 +93,7 @@ if (ds_priority_size(gladiators) != 0) {
 with (turn) {
     my_turn = true
 }
+global.turn = turn
 </string>
           </argument>
         </arguments>
@@ -121,7 +123,7 @@ next = ds_priority_find_max(gladiators)
 if (ds_priority_size(gladiators) &gt; 0 &amp;&amp; next != noone) {
     draw_set_font(fnt_small)
     draw_text(20, room_height - 40, next.name)
-    //draw_sprite(object_get_sprite(next), 0, 20, room_height - 20)
+    draw_sprite(next.sprite_index, 0, 20, room_height - 20)
 }
 </string>
           </argument>

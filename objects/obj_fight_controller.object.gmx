@@ -29,15 +29,48 @@
 
 turn_handler = instance_create(-1,-1, obj_turner)
 
+i = 0
 repeat(6) {
-    gladiator = instance_create(irandom_range(20, room_width - 20), irandom_range(20, room_height - 20), obj_gladiator)
-    
+    gladiator = instance_create(room_width/2 - 64 + 32*i, room_height/2 + 32*irandom_range(-5,5), obj_gladiator)
+
     ds_priority_add(turn_handler.gladiators, gladiator.id, gladiator.spd)
-        
+    i++
 }
 with (turn_handler) {
     event_user(1)
     event_user(0)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Arrows
+
+counter = 0
+
+for(xx = 0; xx &lt; 3; xx++) {
+    for (yy = 0; yy &lt; 3; yy++) {
+        arrow = instance_create(32 + yy * 64, room_height/2 - 32 + 64*xx, obj_arrow) 
+        arrow.dir = counter
+        arrow.image_index = counter
+        counter++
+    }
 }
 </string>
           </argument>
