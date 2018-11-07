@@ -1,0 +1,13 @@
+///draw_outline(str, x, y, color)
+
+draw_set_color(c_black)
+draw_text(argument1+1,argument2+1,argument0)
+draw_text(argument1-1,argument2-1,argument0)
+draw_text(argument1,argument2+1,argument0)
+draw_text(argument1+1,argument2,argument0)
+draw_text(argument1,argument2-1,argument0)
+draw_text(argument1-1,argument2,argument0)
+draw_text(argument1-1,argument2+1,argument0)
+draw_text(argument1+1,argument2-1,argument0)
+draw_set_color(argument3)
+draw_text(argument1,argument2,argument0)

@@ -678,16 +678,18 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="9">
+    <constants number="11">
+      <constant name="HOSTILE">1</constant>
+      <constant name="FRIENDLY">0</constant>
       <constant name="GRID_SIZE">32</constant>
+      <constant name="NORTH_WEST">0</constant>
       <constant name="NORTH">1</constant>
       <constant name="NORTH_EAST">2</constant>
-      <constant name="EAST">5</constant>
-      <constant name="SOUTH_EAST">8</constant>
-      <constant name="SOUTH">7</constant>
-      <constant name="SOUTH_WEST">6</constant>
       <constant name="WEST">3</constant>
-      <constant name="NORTH_WEST">0</constant>
+      <constant name="EAST">5</constant>
+      <constant name="SOUTH_WEST">6</constant>
+      <constant name="SOUTH">7</constant>
+      <constant name="SOUTH_EAST">8</constant>
     </constants>
   </ConfigConstants>
 </Config>

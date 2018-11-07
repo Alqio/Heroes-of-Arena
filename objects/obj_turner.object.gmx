@@ -26,11 +26,37 @@
           <argument>
             <kind>1</kind>
             <string>gladiators = ds_priority_create()
+copy = ds_priority_create()
 
 turn = noone
 turn_number = 0
 max_turns = ds_priority_size(gladiators)
 global.turn = turn
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (turn.turn_used) {
+    event_user(0)
+}
 </string>
           </argument>
         </arguments>
@@ -80,7 +106,6 @@ max_turns = ds_priority_size(gladiators)
             <kind>1</kind>
             <string>with (turn) {
     my_turn = false
-    turn_used = true
 }
 
 if (ds_priority_size(gladiators) != 0) {
@@ -93,7 +118,9 @@ if (ds_priority_size(gladiators) != 0) {
 with (turn) {
     my_turn = true
 }
+
 global.turn = turn
+
 </string>
           </argument>
         </arguments>
@@ -120,11 +147,26 @@ global.turn = turn
 
 next = ds_priority_find_max(gladiators)
 
+ds_priority_copy(copy, gladiators)
+
+draw_set_font(fnt_small)
+for(i = 0; i &lt; ds_priority_size(copy); i++) {
+    next = ds_priority_delete_max(copy)
+    draw_set_halign(fa_center)
+    draw_outline(next.name, 64 + 128 * i, room_height - 32, c_red)
+    draw_set_halign(fa_left)
+    draw_sprite_ext(next.sprite_index, 0, 64 + 128 * i, room_height - 64, 2, 2, 0, c_white, 1)
+}
+/*
 if (ds_priority_size(gladiators) &gt; 0 &amp;&amp; next != noone) {
     draw_set_font(fnt_small)
     draw_text(20, room_height - 40, next.name)
     draw_sprite(next.sprite_index, 0, 20, room_height - 20)
 }
+*/
+draw_set_font(fnt_medium)
+
+draw_outline("Current gladiator: " + turn.name + "#Actions left: " + string(turn.moves_left), 20, 20, c_red)
 </string>
           </argument>
         </arguments>

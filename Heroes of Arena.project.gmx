@@ -9,15 +9,19 @@
     <sprite>sprites\spr_gladiator</sprite>
     <sprite>sprites\spr_gladiator2</sprite>
     <sprite>sprites\spr_arrows</sprite>
+    <sprite>sprites\spr_solid</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_fill_gladiators_queue.gml</script>
     <script>scripts\scr_move_unit.gml</script>
+    <script>scripts\scr_swap_gladiator_places.gml</script>
+    <script>scripts\draw_outline.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
+    <font>fonts\fnt_medium</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_turner</object>
@@ -26,8 +30,10 @@
     <object>objects\obj_init</object>
     <object>objects\obj_attack_stats</object>
     <object>objects\obj_arrow</object>
+    <object>objects\obj_path</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <room>rooms\rm_fight</room>
   </rooms>
   <help>

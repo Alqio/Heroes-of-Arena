@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>randomize()
 global.turn = noone
+room_goto_next()
 </string>
           </argument>
         </arguments>

@@ -41,7 +41,32 @@ dodge = 0
 owner = noone
 turn_used = false
 
-side = "friendly"
+side = FRIENDLY
+
+//turn
+max_moves_per_turn = 3
+moves_left = max_moves_per_turn
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Name
 
 name = "JaakkO"
 
@@ -61,7 +86,13 @@ ds_list_add(names,
 "Maximus",
 "Hermimus",
 "Marthak",
-"Gink")
+"Gink",
+"Ogel",
+"Mahja",
+"Krist",
+"Snick",
+"Jbla"
+)
 
 ds_list_shuffle(names)
 
@@ -92,6 +123,54 @@ ds_list_destroy(names)
             <string>fight_bonuses = instance_create(x,y, obj_attack_stats)
 
 sprite_index = choose(spr_gladiator, spr_gladiator2)
+
+hover = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hover = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hover = true
 </string>
           </argument>
         </arguments>
@@ -114,17 +193,39 @@ sprite_index = choose(spr_gladiator, spr_gladiator2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
+            <string>
+var w = sprite_get_width(sprite_index)
+var h = sprite_get_height(sprite_index)
 
-if (my_turn) {
-    var w = sprite_get_width(sprite_index)
-    var h = sprite_get_height(sprite_index)
-    
-    draw_set_color(c_red)
-    draw_rectangle(x, y, x + w, y + h, true)
+if (global.turn == id) {
+    draw_set_alpha(0.7)
+} else {
+    draw_set_alpha(0.3)
 }
+
+
+
+if (side == HOSTILE) {
+    draw_set_color(c_red)
+    draw_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, false)
+} else {
+    draw_set_color(c_green)
+    draw_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, false)
+}
+
+draw_set_alpha(1)
+draw_set_color(c_black)
+
+if (my_turn &amp;&amp; global.turn == id) {
+    draw_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, true)
+}
+
+draw_self()
+
 draw_set_font(fnt_small)
-draw_text(x,y,name)
+draw_text(x,y, name)
+
+
 </string>
           </argument>
         </arguments>
