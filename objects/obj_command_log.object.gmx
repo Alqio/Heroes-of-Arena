@@ -25,11 +25,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///This class represents a gladiator's stat bonuses in a fight
+            <string>log = ds_list_create()
 
-attack_bonus = 0
-spd_bonus = 0
-defense_bonus = 0
+global.log = id
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_font(fnt_tiny)
+for (i = 0; i &lt; ds_list_size(log); i++) {
+    draw_outline(ds_list_find_value(log, i), x, y + 16*i, c_red)
+}
+
 </string>
           </argument>
         </arguments>

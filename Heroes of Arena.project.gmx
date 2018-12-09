@@ -18,20 +18,25 @@
     <script>scripts\scr_move_unit.gml</script>
     <script>scripts\scr_swap_gladiator_places.gml</script>
     <script>scripts\draw_outline.gml</script>
+    <script>scripts\scr_attack.gml</script>
+    <script>scripts\scr_log_command.gml</script>
+    <script>scripts\scr_kill_gladiator.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
     <font>fonts\fnt_medium</font>
+    <font>fonts\fnt_tiny</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_turner</object>
     <object>objects\obj_gladiator</object>
     <object>objects\obj_fight_controller</object>
     <object>objects\obj_init</object>
-    <object>objects\obj_attack_stats</object>
+    <object>objects\obj_fight_bonus</object>
     <object>objects\obj_arrow</object>
     <object>objects\obj_path</object>
     <object>objects\obj_solid</object>
+    <object>objects\obj_command_log</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

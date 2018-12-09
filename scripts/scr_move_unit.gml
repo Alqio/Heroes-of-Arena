@@ -33,10 +33,13 @@ if (x_step == 0 && y_step == 0) {
 } else {
     new_x = unit.x + x_step
     new_y = unit.y + y_step
-
-    if (place_free(new_x, new_y)) {
+    
+    collision = position_meeting(new_x, new_y, all)
+    
+    if (collision == noone || (collision != noone && !collision.solid)) {
         inst = instance_position(new_x, new_y, obj_gladiator)
         
+        //make sure we are not colliding with ourself
         if (inst != noone && inst.id == unit.id) 
             inst = noone
         
@@ -46,8 +49,11 @@ if (x_step == 0 && y_step == 0) {
         } else if (inst.side == unit.side) {
             script_execute(scr_swap_gladiator_places, inst, unit)
         } else {
-            //attack?
+            scr_attack(unit, inst)
         }
+    } else {
+        show_message("Place not free: (" + string(new_x) + ", " + string(new_y) + ")")
+        
     }
 
 }

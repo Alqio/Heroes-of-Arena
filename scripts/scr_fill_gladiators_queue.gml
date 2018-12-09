@@ -2,7 +2,7 @@
 
 with (obj_gladiator) {
     if (turn_used) {
-        ds_priority_add(argument0, id, spd + fight_bonuses.spd_bonus)
+        ds_priority_add(argument0, id, spd + fight_bonuses.spd)
         turn_used = false
         moves_left = max_moves_per_turn
     }

@@ -32,10 +32,12 @@ spd = 0 + random_range(0, 3)
 max_mana = 10
 mana = max_mana
 my_turn = false
-attack_power = 1
+damage = 1
 defense = 1
+
 spell_power = 1
 magic_resistance = 1
+
 dodge = 0
 
 owner = noone
@@ -46,6 +48,7 @@ side = FRIENDLY
 //turn
 max_moves_per_turn = 3
 moves_left = max_moves_per_turn
+can_retaliate = true
 </string>
           </argument>
         </arguments>
@@ -120,7 +123,7 @@ ds_list_destroy(names)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fight_bonuses = instance_create(x,y, obj_attack_stats)
+            <string>fight_bonuses = instance_create(x,y, obj_fight_bonus)
 
 sprite_index = choose(spr_gladiator, spr_gladiator2)
 

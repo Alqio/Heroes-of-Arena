@@ -123,6 +123,8 @@ for (i = 0; i &lt;= grid_height; i+= 32){
         draw_line(x_start + j, y_start, x_start + j, y_end)
     }
 }
+draw_set_font(fnt_medium)
+draw_outline(string(mouse_x) + ", " + string(mouse_y), 32, 128, c_yellow)
 </string>
           </argument>
         </arguments>

@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize()
-global.turn = noone
-global.log = noone
+            <string>///This class represents a gladiator's stat bonuses in a fight
 
-room_goto_next()
+damage = 0
+spd = 0
+defense = 0
 </string>
           </argument>
         </arguments>
