@@ -121,6 +121,7 @@ with (turn) {
 
 global.turn = turn
 
+ds_priority_copy(copy, gladiators)
 </string>
           </argument>
         </arguments>
@@ -147,16 +148,22 @@ global.turn = turn
 
 next = ds_priority_find_max(gladiators)
 
-ds_priority_copy(copy, gladiators)
-
 draw_set_font(fnt_small)
 for(i = 0; i &lt; ds_priority_size(copy); i++) {
-    next = ds_priority_delete_max(copy)
+    next = ds_priority_find_max(copy)
+    ds_priority_change_priority(copy,next,-1000000)
     draw_set_halign(fa_center)
-    draw_outline(next.name, 64 + 128 * i, room_height - 32, c_red)
+    if (next.side == FRIENDLY) color = c_green else color = c_red
+    draw_outline(next.name, 64 + 128 * i, room_height - 32, color)
     draw_set_halign(fa_left)
     draw_sprite_ext(next.sprite_index, 0, 64 + 128 * i, room_height - 64, 2, 2, 0, c_white, 1)
 }
+
+for(i = 0; i &lt; ds_priority_size(copy); i++) {
+    gladiator = ds_priority_find_min(copy)
+    ds_priority_change_priority(copy, gladiator, gladiator.spd + gladiator.fight_bonuses.spd_bonus)
+}
+
 /*
 if (ds_priority_size(gladiators) &gt; 0 &amp;&amp; next != noone) {
     draw_set_font(fnt_small)
@@ -164,6 +171,8 @@ if (ds_priority_size(gladiators) &gt; 0 &amp;&amp; next != noone) {
     draw_sprite(next.sprite_index, 0, 20, room_height - 20)
 }
 */
+
+
 draw_set_font(fnt_medium)
 
 draw_outline("Current gladiator: " + turn.name + "#Actions left: " + string(turn.moves_left), 20, 20, c_red)
