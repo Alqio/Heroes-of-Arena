@@ -28,6 +28,10 @@
             <string>log = ds_list_create()
 
 global.log = id
+
+max_size = 15
+size = 0
+log_number = 1
 </string>
           </argument>
         </arguments>

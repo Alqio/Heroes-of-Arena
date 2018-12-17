@@ -28,12 +28,14 @@
             <string>///Attributes
 max_hp = 100
 hp = max_hp
-spd = 0 + random_range(0, 3)
+spd = random_range(0, 3)
 max_mana = 10
 mana = max_mana
 my_turn = false
 damage = 1
 defense = 1
+
+weapon = noone
 
 spell_power = 1
 magic_resistance = 1
@@ -44,6 +46,8 @@ owner = noone
 turn_used = false
 
 side = FRIENDLY
+
+is_template = false
 
 //turn
 max_moves_per_turn = 3

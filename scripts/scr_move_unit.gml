@@ -33,27 +33,25 @@ if (x_step == 0 && y_step == 0) {
 } else {
     new_x = unit.x + x_step
     new_y = unit.y + y_step
+
+    collision = instance_position(new_x, new_y, all)
     
-    collision = position_meeting(new_x, new_y, all)
+    //collided with terrain, moving failed
+    if (collision != noone && collision.solid) {
+        scr_log_command("Moving failed, blocked by terrain")
+        //show_message("j")
+        return false
+    }
     
-    if (collision == noone || (collision != noone && !collision.solid)) {
-        inst = instance_position(new_x, new_y, obj_gladiator)
+    if (collision == noone) {
+        unit.x += x_step
+        unit.y += y_step
         
-        //make sure we are not colliding with ourself
-        if (inst != noone && inst.id == unit.id) 
-            inst = noone
-        
-        if (inst == noone) {
-            unit.x += x_step
-            unit.y += y_step
-        } else if (inst.side == unit.side) {
-            script_execute(scr_swap_gladiator_places, inst, unit)
-        } else {
-            scr_attack(unit, inst)
-        }
+    //collision with another gladiator
+    } else if (collision.side == unit.side) {
+        script_execute(scr_swap_gladiator_places, collision, unit)
     } else {
-        show_message("Place not free: (" + string(new_x) + ", " + string(new_y) + ")")
-        
+        scr_attack(unit, collision)
     }
 
 }
@@ -63,4 +61,5 @@ if (unit.moves_left = 0) {
     unit.turn_used = true
 }
 
+return true
 

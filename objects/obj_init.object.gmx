@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,6 +28,18 @@
             <string>randomize()
 global.turn = noone
 global.log = noone
+
+
+global.gladiators = ds_list_create()
+for (i = 0; i &lt; 3; i++) {
+    gladiator = ds_map_create()
+    ds_map_add(gladiator, "race", "borssy")
+    ds_map_add(gladiator, "name", "Glurg")
+    ds_map_add(gladiator, "weapon", noone)
+    
+    ds_list_add(global.gladiators, gladiator)
+    
+}
 
 room_goto_next()
 </string>

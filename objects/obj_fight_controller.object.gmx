@@ -25,10 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Turn handler
+            <string>///Turn handler and gladiators
 
 turn_handler = instance_create(-1,-1, obj_turner)
 
+for (i = 0; i &lt; ds_map_size(global.gladiators); i++) {
+
+    do {
+        xx = room_width/2 - 64 + 32*i
+        yy = room_height/2 + 32*irandom_range(-5,5)
+    } until(place_free(xx,yy))
+    
+    gladiator_instance = scr_create_gladiator(i, xx, yy)
+    
+    ds_priority_add(turn_handler.gladiators, gladiator_instance.id, gladiator_instance.spd)
+    
+}
+/*
 i = 0
 repeat(8) {
 
@@ -43,7 +56,7 @@ repeat(8) {
     
     ds_priority_add(turn_handler.gladiators, gladiator.id, gladiator.spd)
     i++
-}
+}*/
 with (turn_handler) {
     event_user(1)
     event_user(0)

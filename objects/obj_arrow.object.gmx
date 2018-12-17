@@ -52,6 +52,8 @@ image_speed = 0
             <string>turn = global.turn
 
 script_execute(scr_move_unit, turn, dir)
+    
+
 </string>
           </argument>
         </arguments>
