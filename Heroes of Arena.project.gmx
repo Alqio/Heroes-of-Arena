@@ -10,6 +10,8 @@
     <sprite>sprites\spr_gladiator2</sprite>
     <sprite>sprites\spr_arrows</sprite>
     <sprite>sprites\spr_solid</sprite>
+    <sprite>sprites\spr_weapon</sprite>
+    <sprite>sprites\spr_fists</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -22,6 +24,8 @@
     <script>scripts\scr_log_command.gml</script>
     <script>scripts\scr_kill_gladiator.gml</script>
     <script>scripts\scr_create_gladiator.gml</script>
+    <script>scripts\scr_draw_gladiator.gml</script>
+    <script>scripts\scr_create_weapon.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
@@ -30,7 +34,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_turner</object>
-    <object>objects\obj_gladiator</object>
     <object>objects\obj_fight_controller</object>
     <object>objects\obj_init</object>
     <object>objects\obj_fight_bonus</object>
@@ -38,6 +41,14 @@
     <object>objects\obj_path</object>
     <object>objects\obj_solid</object>
     <object>objects\obj_command_log</object>
+    <objects name="races">
+      <object>objects\obj_borssy</object>
+      <object>objects\obj_gladiator</object>
+    </objects>
+    <objects name="weapons">
+      <object>objects\obj_fists</object>
+      <object>objects\obj_weapon</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
