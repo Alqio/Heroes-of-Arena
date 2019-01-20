@@ -678,7 +678,8 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="11">
+    <constants number="12">
+      <constant name="NEXT_ROOM">-1</constant>
       <constant name="HOSTILE">1</constant>
       <constant name="FRIENDLY">0</constant>
       <constant name="GRID_SIZE">32</constant>

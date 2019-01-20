@@ -12,6 +12,7 @@
     <sprite>sprites\spr_solid</sprite>
     <sprite>sprites\spr_weapon</sprite>
     <sprite>sprites\spr_fists</sprite>
+    <sprite>sprites\spr_button</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -26,6 +27,8 @@
     <script>scripts\scr_create_gladiator.gml</script>
     <script>scripts\scr_draw_gladiator.gml</script>
     <script>scripts\scr_create_weapon.gml</script>
+    <script>scripts\scr_room_goto.gml</script>
+    <script>scripts\scr_create_unemployed_gladiators.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
@@ -49,9 +52,13 @@
       <object>objects\obj_fists</object>
       <object>objects\obj_weapon</object>
     </objects>
+    <objects name="buttons">
+      <object>objects\obj_button</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_draft</room>
     <room>rooms\rm_fight</room>
   </rooms>
   <help>

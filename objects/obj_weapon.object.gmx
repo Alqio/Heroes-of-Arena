@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>damage = 1
 name = "Fists"
+side = FRIENDLY
+range = 1
 </string>
           </argument>
         </arguments>

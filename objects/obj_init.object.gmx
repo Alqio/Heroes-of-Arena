@@ -30,6 +30,10 @@ global.turn = noone
 global.log = noone
 
 
+global.races = ds_list_create()
+ds_list_add(global.races, "borssy")
+global.nOfRaces = ds_list_size(global.races)
+
 global.gladiators = ds_list_create()
 for (i = 0; i &lt; 3; i++) {
     gladiator = ds_map_create()
