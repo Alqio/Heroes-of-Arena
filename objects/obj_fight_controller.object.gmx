@@ -35,8 +35,8 @@ for (i = 0; i &lt; ds_list_size(global.gladiators); i++) {
         xx = room_width/2 - 64 + 32*i
         yy = room_height/2 + 32*irandom_range(-5,5)
     } until(place_free(xx,yy))
-
-    gladiator_instance = scr_create_gladiator(i, xx, yy)
+    
+    gladiator_instance = scr_create_gladiator(ds_list_find_value(global.gladiators, i), xx, yy)
     
     ds_priority_add(turn_handler.gladiators, gladiator_instance.id, gladiator_instance.spd)
     

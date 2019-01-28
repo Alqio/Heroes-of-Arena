@@ -7,6 +7,8 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_gladiator</sprite>
+    <sprite>sprites\spr_borssy</sprite>
+    <sprite>sprites\spr_save</sprite>
     <sprite>sprites\spr_gladiator2</sprite>
     <sprite>sprites\spr_arrows</sprite>
     <sprite>sprites\spr_solid</sprite>
@@ -55,6 +57,7 @@
     <objects name="buttons">
       <object>objects\obj_button</object>
     </objects>
+    <object>objects\obj_drafter2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

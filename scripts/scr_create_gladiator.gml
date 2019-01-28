@@ -1,10 +1,9 @@
-///scr_create_gladiator(index, x, y)
+///scr_create_gladiator(gladiator_data, x, y)
 
-index = argument0
 xx = argument1
 yy = argument2
 
-gladiator_data = ds_list_find_value(global.gladiators, index)
+gladiator_data = argument0
 
 race = ds_map_find_value(gladiator_data, "race")
 
