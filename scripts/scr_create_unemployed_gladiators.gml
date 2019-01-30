@@ -6,7 +6,6 @@ gladiators = ds_list_create()
 
 repeat(amount) {
     race = ds_list_find_value(global.races, irandom(global.nOfRaces))
-    show_debug_message(race)
     
     race = "borssy"
     
@@ -16,24 +15,38 @@ repeat(amount) {
     }
     
     gladiator_data = ds_map_create()
+
+    gladiator.spd *= random_range(0.6, 1.4)
+    gladiator.max_hp *= random_range(0.8, 1.2)
+    gladiator.strength *= random_range(0.6, 1.4)
+    gladiator.spell_power *= random_range(0.6, 1.4)
+    gladiator.max_mana *= random_range(0.9, 1.1)
     
-    //todo ds_list_add näille
-    name = gladiator.name
-    weapon = "Fists"
-    spd = gladiator.spd * random_range(0.6, 1.4)
-    max_hp = gladiator.max_hp * random_range(0.8, 1.2)
-    strength = gladiator.strength * random_range(0.6, 1.4)
-    spell_power = gladiator.spell_power * random_range(0.6, 1.4)
-    max_mana = gladiator.max_mana * random_range(0.9, 1.1)
+    rand = irandom(100)
     
-    ds_map_add(gladiator_data, "name", name)
+    if (rand < 50) 
+        level = irandom(3) + 1
+    else if (rand >= 50 && rand < 80)
+        level = irandom_range(3, 8)
+    else if (rand >= 80)
+        level = irandom_range(8, 12)
+    
+    repeat(level) {
+        scr_level_gladiator(gladiator)
+    }
+    
+    gladiator.experience = irandom(gladiator.expirience_needed)
+    
+    ds_map_add(gladiator_data, "name", gladiator.name)
     ds_map_add(gladiator_data, "weapon", "Fists")
-    ds_map_add(gladiator_data, "max_hp", max_hp)
-    ds_map_add(gladiator_data, "max_mana", max_mana)
-    ds_map_add(gladiator_data, "strength", strength)
-    ds_map_add(gladiator_data, "spell_power", spell_power)
-    ds_map_add(gladiator_data, "spd", spd)
-    ds_map_add(gladiator_data, "race", race)
+    ds_map_add(gladiator_data, "max_hp", gladiator.max_hp)
+    ds_map_add(gladiator_data, "max_mana", gladiator.max_mana)
+    ds_map_add(gladiator_data, "strength", gladiator.strength)
+    ds_map_add(gladiator_data, "spell_power", gladiator.spell_power)
+    ds_map_add(gladiator_data, "spd", gladiator.spd)
+    ds_map_add(gladiator_data, "race", gladiator.race)
+    ds_map_add(gladiator_data, "level", gladiator. level)
+    ds_map_add(gladiator_data, "expirience", gladiator.expirience)
     
     instance_destroy(gladiator)
     

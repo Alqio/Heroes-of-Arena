@@ -12,9 +12,11 @@ draw_set_font(fnt_small)
 str = "HP: " + string(gladiator.hp) + "/" + string(gladiator.max_hp) + "#" + 
     "MP: " + string(gladiator.mana) + "/" + string(gladiator.max_mana) + "#" + 
     "Weapon: " + string(gladiator.weapon.name) + "#" +
-    "Strentgh: " + string(gladiator.strength) + "#" + 
+    "Strength: " + string(gladiator.strength) + "#" + 
     "Spd: " + string(gladiator.spd) + "#" +
+    "Level: " + string(gladiator.level) + "#" + 
     "Actions: " + string(gladiator.moves_left) + "/" + string(gladiator.max_moves_per_turn) + "#"
+    
 
 draw_outline(str, xx, yy + 32, c_yellow)
 

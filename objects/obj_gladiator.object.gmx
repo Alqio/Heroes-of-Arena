@@ -31,7 +31,19 @@ max_mana = 10
 spd = random_range(0, 3)
 strength = 1.5
 spell_power = 1
+
+hp_growth = 0.8
+mana_growth = 0.6
+str_growth = 0.5
+spd_growth = 0.5
+spell_power_growth = 0.5
+
+expirience_needed = 100
+
 max_moves_per_turn = 3
+
+race = "borssy"
+
 </string>
           </argument>
         </arguments>
@@ -54,6 +66,8 @@ max_moves_per_turn = 3
             <kind>1</kind>
             <string>///Misc
 
+level = 1
+expirience = 0
 
 
 my_turn = false
@@ -275,9 +289,6 @@ if (my_turn &amp;&amp; global.turn == id) {
 }
 
 draw_self()
-
-draw_set_font(fnt_small)
-draw_text(x,y, name)
 
 
 </string>

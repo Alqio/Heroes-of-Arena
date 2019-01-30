@@ -47,7 +47,18 @@ strength = 1
 spell_power = 2
 max_moves_per_turn = 4
 
+hp_growth = 0.6
+mana_growth = 0.4
+str_growth = 0.5
+spd_growth = 0.95
+spell_power_growth = 0.4
+
+expirience_needed = 80
+
 weapon = instance_create(x,y, obj_fists)
+
+race = "borssy"
+
 </string>
           </argument>
         </arguments>
