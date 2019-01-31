@@ -5,6 +5,8 @@ xx = argument1
 yy = argument2
 font = argument3
 
+if (gladiator == noone) return
+
 draw_set_font(fnt_medium)
 draw_outline(gladiator.name, xx, yy, c_yellow)
 draw_set_font(fnt_small)

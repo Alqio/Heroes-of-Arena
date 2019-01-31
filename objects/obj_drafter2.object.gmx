@@ -53,11 +53,8 @@ for (i = 0; i &lt; ds_list_size(gladiators); i++) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (obj_gladiator) {
-    if (hover) {
-        scr_draw_gladiator(id, room_width - 128, 128, fnt_medium)
-    }
-}
+            <string>
+scr_draw_gladiator(global.selected, room_width - 128, 128, fnt_medium)
 </string>
           </argument>
         </arguments>

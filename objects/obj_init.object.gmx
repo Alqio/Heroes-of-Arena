@@ -28,7 +28,7 @@
             <string>randomize()
 global.turn = noone
 global.log = noone
-
+global.selected = noone
 
 global.races = ds_list_create()
 ds_list_add(global.races, "borssy")
