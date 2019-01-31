@@ -24,7 +24,7 @@ gladiator.strength = ds_map_find_value(gladiator_data, "strength")
 gladiator.spell_power = ds_map_find_value(gladiator_data, "spell_power")
 gladiator.spd = ds_map_find_value(gladiator_data, "spd")
 gladiator.level = ds_map_find_value(gladiator_data, "level")
-gladiator.expirience = ds_map_find_value(gladiator_data, "expirience")
+gladiator.experience = ds_map_find_value(gladiator_data, "experience")
 
 gladiator.hp = gladiator.max_hp
 gladiator.mana = gladiator.max_mana

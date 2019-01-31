@@ -28,6 +28,7 @@
             <string>///Turn handler and gladiators
 
 turn_handler = instance_create(-1,-1, obj_turner)
+global.selected = noone
 
 for (i = 0; i &lt; ds_list_size(global.gladiators); i++) {
 

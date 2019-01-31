@@ -45,6 +45,8 @@ for (i = 0; i &lt; 3; i++) {
     ds_map_add(gladiator, "strength", 1.1)
     ds_map_add(gladiator, "spell_power", 2)
     ds_map_add(gladiator, "max_mana", 10)
+    ds_map_add(gladiator, "experience", 5)
+    ds_map_add(gladiator, "level", 1)
     ds_list_add(global.gladiators, gladiator)
 
 }

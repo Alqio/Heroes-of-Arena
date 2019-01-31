@@ -32,10 +32,12 @@
     <script>scripts\scr_room_goto.gml</script>
     <script>scripts\scr_create_unemployed_gladiators.gml</script>
     <script>scripts\scr_level_gladiator.gml</script>
+    <script>scripts\scr_gain_experience.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
     <font>fonts\fnt_medium</font>
+    <font>fonts\fnt_large</font>
     <font>fonts\fnt_tiny</font>
   </fonts>
   <objects name="objects">

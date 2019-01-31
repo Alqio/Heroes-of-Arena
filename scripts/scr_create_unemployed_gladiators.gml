@@ -35,7 +35,7 @@ repeat(amount) {
         scr_level_gladiator(gladiator)
     }
     
-    gladiator.experience = irandom(gladiator.expirience_needed)
+    gladiator.experience = irandom(gladiator.experience_needed)
     
     ds_map_add(gladiator_data, "name", gladiator.name)
     ds_map_add(gladiator_data, "weapon", "Fists")
@@ -46,7 +46,7 @@ repeat(amount) {
     ds_map_add(gladiator_data, "spd", gladiator.spd)
     ds_map_add(gladiator_data, "race", gladiator.race)
     ds_map_add(gladiator_data, "level", gladiator. level)
-    ds_map_add(gladiator_data, "expirience", gladiator.expirience)
+    ds_map_add(gladiator_data, "experience", gladiator.experience)
     
     instance_destroy(gladiator)
     

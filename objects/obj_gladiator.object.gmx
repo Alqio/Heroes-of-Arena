@@ -38,7 +38,7 @@ str_growth = 0.5
 spd_growth = 0.5
 spell_power_growth = 0.5
 
-expirience_needed = 100
+experience_needed = 100
 
 max_moves_per_turn = 3
 
@@ -67,7 +67,7 @@ race = "borssy"
             <string>///Misc
 
 level = 1
-expirience = 0
+experience = 0
 
 
 my_turn = false

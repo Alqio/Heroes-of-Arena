@@ -11,24 +11,25 @@ dmg = max(0, (attacker.weapon.damage + attacker.fight_bonuses.damage) -
              (attackee.defense + attackee.fight_bonuses.defense))
 
 attackee.hp -= dmg
+scr_gain_experience(attacker, 5)
 
 scr_log_command(attacker.name + " deals " + string(dmg) + " damage")
 
 if (attackee.hp <= 0) {
+    scr_gain_experience(attacker, attackee.level + 10)
     scr_kill_gladiator(attackee)
-} else if (attackee.can_retaliate){
+} else if (attackee.can_retaliate) {
     dmg = max(0, (attackee.weapon.damage + attackee.fight_bonuses.damage) - 
              (attacker.defense + attacker.fight_bonuses.defense))
     
     attacker.hp -= dmg
+    scr_gain_experience(attackee, 2)
     
     scr_log_command(attackee.name + " retaliates for " + string(dmg) + " damage")
     
     if (attacker.hp <= 0) {
+        scr_gain_experience(attackee, attacker.level + 10)
         scr_kill_gladiator(attacker)
     }
 }
-
-
-
 
