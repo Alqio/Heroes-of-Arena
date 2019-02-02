@@ -21,6 +21,8 @@ repeat(amount) {
     gladiator.strength *= random_range(0.6, 1.4)
     gladiator.spell_power *= random_range(0.6, 1.4)
     gladiator.max_mana *= random_range(0.9, 1.1)
+    gladiator.wage *= random_range(0.9, 1.1)
+    gladiator.age = irandom_range(18, 35)
     
     rand = irandom(100)
     
@@ -47,6 +49,8 @@ repeat(amount) {
     ds_map_add(gladiator_data, "race", gladiator.race)
     ds_map_add(gladiator_data, "level", gladiator. level)
     ds_map_add(gladiator_data, "experience", gladiator.experience)
+    ds_map_add(gladiator_data, "wage", gladiator.wage)
+    ds_map_add(gladiator_data, "age", gladiator.age)
     
     instance_destroy(gladiator)
     

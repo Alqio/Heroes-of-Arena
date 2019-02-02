@@ -40,6 +40,10 @@ spell_power_growth = 0.5
 
 experience_needed = 100
 
+wage = 25
+age = 18
+max_age = 40
+
 max_moves_per_turn = 3
 
 race = "borssy"
@@ -295,7 +299,7 @@ if (global.turn == id) {
 }
 
 
-
+//TODO check if fighting
 if (side == HOSTILE) {
     draw_set_color(c_red)
     draw_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, false)

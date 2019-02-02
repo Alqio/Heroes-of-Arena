@@ -29,6 +29,7 @@
 global.turn = noone
 global.log = noone
 global.selected = noone
+global.gold = 1000
 
 global.races = ds_list_create()
 ds_list_add(global.races, "borssy")
