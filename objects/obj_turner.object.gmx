@@ -217,6 +217,7 @@ if (ds_priority_size(gladiators) != 0) {
 with (turn) {
     my_turn = true
 }
+global.selected = turn
 </string>
           </argument>
         </arguments>

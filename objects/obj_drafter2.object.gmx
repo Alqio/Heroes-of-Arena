@@ -32,6 +32,9 @@ for (i = 0; i &lt; ds_list_size(gladiators); i++) {
 }
 
 team = ds_list_create()
+
+team_pos_x = room_width - 33 * ds_list_size(team) - 64
+team_pos_y = 128
 </string>
           </argument>
         </arguments>
@@ -89,6 +92,31 @@ if (g != noone) {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for (var i = 0; i &lt; ds_list_size(team); i++) {
+    ds_list_add(global.gladiators, scr_save_gladiator(ds_list_find_value(team, i)));
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="72">
       <action>
         <libid>1</libid>
@@ -110,8 +138,8 @@ if (g != noone) {
     var g = ds_list_find_value(team, i)
     
     draw_set_alpha(0.5)
-    draw_rectangle(g.x - sprite_get_width(g.sprite_index)/2, g.y - sprite_get_height(g.sprite_index)/2, 
-    g.x + sprite_get_width(g.sprite_index)/2, g.y + sprite_get_height(g.sprite_index)/2, false)
+    //draw_rectangle(g.x - sprite_get_width(g.sprite_index)/2, g.y - sprite_get_height(g.sprite_index)/2, 
+    //g.x + sprite_get_width(g.sprite_index)/2, g.y + sprite_get_height(g.sprite_index)/2, false)
     draw_set_alpha(1)
 }
 </string>
@@ -145,7 +173,6 @@ draw_set_font(fnt_medium)
 draw_set_halign(fa_center)
 draw_outline("Gold: " + string(global.gold) + " gp", room_width/2, 64, c_yellow)
 draw_set_halign(fa_left)
-
 
 </string>
           </argument>

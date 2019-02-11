@@ -35,6 +35,7 @@
     <script>scripts\scr_gain_experience.gml</script>
     <script>scripts\scr_calculate_gladiator_cost.gml</script>
     <script>scripts\scr_recruit_gladiator.gml</script>
+    <script>scripts\scr_save_gladiator.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>

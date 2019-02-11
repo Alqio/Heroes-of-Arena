@@ -311,7 +311,7 @@ if (side == HOSTILE) {
 draw_set_alpha(1)
 draw_set_color(c_black)
 
-if (my_turn &amp;&amp; global.turn == id) {
+if ((my_turn &amp;&amp; global.turn == id) || global.selected = id) {
     draw_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, true)
 }
 

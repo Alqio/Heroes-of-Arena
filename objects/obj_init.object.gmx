@@ -29,6 +29,7 @@
 global.turn = noone
 global.log = noone
 global.selected = noone
+
 global.gold = 1000
 
 global.races = ds_list_create()
@@ -48,7 +49,7 @@ for (i = 0; i &lt; 3; i++) {
     ds_map_add(gladiator, "max_mana", 10)
     ds_map_add(gladiator, "experience", 5)
     ds_map_add(gladiator, "level", 1)
-    ds_list_add(global.gladiators, gladiator)
+    //ds_list_add(global.gladiators, gladiator)
 
 }
 
