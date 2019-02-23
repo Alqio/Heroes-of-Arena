@@ -25,14 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///This class represents a gladiator's stat bonuses in a fight
+            <string>name = "Fireball"
 
-damage = 0
-spd = 0
-defense = 0
-spell_power = 0
-
-turns_left = 10
 </string>
           </argument>
         </arguments>

@@ -4,7 +4,9 @@ if (global.selected == noone) return 0
 var c = scr_calculate_gladiator_cost(global.selected)
 
 with (obj_drafter2) {
-    if (c <= global.gold && ds_list_find_index(team, global.selected) == -1) {
+    index_in_team = ds_list_find_index(team, global.selected)
+
+    if (c <= global.gold && index_in_team == -1) {
         ds_list_add(team, global.selected)
         global.gold -= c
         ds_list_delete(gladiators, global.selected)
@@ -15,6 +17,10 @@ with (obj_drafter2) {
             g.x = team_pos_x + 33*j
         }
         
+    } else if (c > global.gold) {
+        scr_notify("Not enough gold")
+    } else if (index_in_team != -1) {
+        scr_notify("Gladiator already in team")
     }
     
 }

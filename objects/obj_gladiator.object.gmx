@@ -167,7 +167,9 @@ ds_list_destroy(names)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fight_bonuses = instance_create(x,y, obj_fight_bonus)
+            <string>//fight_bonuses = instance_create(x,y, obj_fight_bonus)
+
+fight_bonuses = ds_list_create()
 
 //sprite_index = choose(spr_gladiator, spr_gladiator2)
 

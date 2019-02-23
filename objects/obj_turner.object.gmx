@@ -177,7 +177,7 @@ if (ds_priority_size(gladiators) &gt; 0 &amp;&amp; next != noone) {
 
 //draw_outline("Current gladiator: " + turn.name + "#Actions left: " + string(turn.moves_left), 20, 20, c_red)
 //scr_draw_gladiator(turn, 20, 20, fnt_medium)
-scr_draw_gladiator(global.selected, 20, 20, fnt_medium)
+scr_draw_gladiator(global.selected, 20, 20, false)
 </string>
           </argument>
         </arguments>

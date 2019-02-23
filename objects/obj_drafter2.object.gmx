@@ -57,7 +57,7 @@ team_pos_y = 128
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_restart()
+            <string>game_restart()
 </string>
           </argument>
         </arguments>
@@ -81,7 +81,7 @@ team_pos_y = 128
           <argument>
             <kind>1</kind>
             <string>var g = instance_position(mouse_x, mouse_y, obj_gladiator)
-if (g != noone) {
+if (g != noone &amp;&amp; instance_number(obj_button) == 1 &amp;&amp; ds_list_find_index(team, g) == -1) {
     global.selected = g
     b = instance_create(128, 280, obj_button)
     b.text = "Recruit"

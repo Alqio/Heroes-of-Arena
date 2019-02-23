@@ -15,6 +15,10 @@
     <sprite>sprites\spr_weapon</sprite>
     <sprite>sprites\spr_fists</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprites name="spells">
+      <sprite>sprites\spr_fireball_icon</sprite>
+      <sprite>sprites\spr_purepower_icon</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -36,6 +40,8 @@
     <script>scripts\scr_calculate_gladiator_cost.gml</script>
     <script>scripts\scr_recruit_gladiator.gml</script>
     <script>scripts\scr_save_gladiator.gml</script>
+    <script>scripts\scr_notify.gml</script>
+    <script>scripts\scr_gladiator_attack_bonuses.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
@@ -44,14 +50,6 @@
     <font>fonts\fnt_tiny</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_turner</object>
-    <object>objects\obj_fight_controller</object>
-    <object>objects\obj_init</object>
-    <object>objects\obj_fight_bonus</object>
-    <object>objects\obj_arrow</object>
-    <object>objects\obj_path</object>
-    <object>objects\obj_solid</object>
-    <object>objects\obj_command_log</object>
     <objects name="races">
       <object>objects\obj_borssy</object>
       <object>objects\obj_gladiator</object>
@@ -63,7 +61,23 @@
     <objects name="buttons">
       <object>objects\obj_button</object>
     </objects>
+    <objects name="spells">
+      <object>objects\obj_spell</object>
+      <object>objects\obj_single_target_damage_spell</object>
+      <object>objects\obj_single_target_buff_spell</object>
+      <object>objects\obj_pure_power</object>
+      <object>objects\obj_fireball</object>
+    </objects>
+    <object>objects\obj_fight_controller</object>
+    <object>objects\obj_init</object>
+    <object>objects\obj_turner</object>
+    <object>objects\obj_fight_bonus</object>
+    <object>objects\obj_arrow</object>
+    <object>objects\obj_path</object>
+    <object>objects\obj_solid</object>
+    <object>objects\obj_command_log</object>
     <object>objects\obj_drafter2</object>
+    <object>objects\obj_notification</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
