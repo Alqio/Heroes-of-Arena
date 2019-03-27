@@ -28,7 +28,7 @@
             <string>name = "spell name"
 cost = 4
 caster = noone
-
+target = noone
 </string>
           </argument>
         </arguments>

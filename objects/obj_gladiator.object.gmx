@@ -48,6 +48,9 @@ max_moves_per_turn = 3
 
 race = "borssy"
 
+max_number_of_spells = 4
+number of spells = 0
+
 </string>
           </argument>
         </arguments>

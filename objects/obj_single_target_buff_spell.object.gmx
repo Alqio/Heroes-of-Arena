@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>event_inherited()
 
-target = noone
 duration = 1
 </string>
           </argument>
