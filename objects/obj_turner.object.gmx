@@ -122,6 +122,7 @@ with (turn) {
 }
 
 global.turn = turn
+global.selected = turn
 
 ds_priority_copy(copy, gladiators)
 </string>

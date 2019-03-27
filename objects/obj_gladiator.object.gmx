@@ -49,7 +49,7 @@ max_moves_per_turn = 3
 race = "borssy"
 
 max_number_of_spells = 4
-number of spells = 0
+number_of_spells = 0
 
 </string>
           </argument>
@@ -79,7 +79,7 @@ experience = 0
 
 my_turn = false
 
-weapon = noone
+weapon = "Fists"
 armor  = noone
 
 owner = noone
@@ -96,6 +96,14 @@ image_speed = 0.075
 can_retaliate = true
 
 event_user(0)
+
+//fight_bonuses = instance_create(x,y, obj_fight_bonus)
+
+fight_bonuses = ds_list_create()
+
+//sprite_index = choose(spr_gladiator, spr_gladiator2)
+
+hover = false
 </string>
           </argument>
         </arguments>
@@ -170,13 +178,41 @@ ds_list_destroy(names)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//fight_bonuses = instance_create(x,y, obj_fight_bonus)
+            <string>///saveable variabes
 
-fight_bonuses = ds_list_create()
+saveable_variables = ds_list_create()
+ds_list_add(saveable_variables,
+    pack(self, "name"), 
+    pack(self, "weapon"),
+    pack(self, "max_hp"),
+    pack(self, "max_mana"),
+    pack(self, "strength"),
+    pack(self, "spell_power"),
+    pack(self, "spd"),
+    pack(self, "race"),
+    pack(self, "level"),
+    pack(self, "experience"),
+    pack(self, "wage"),
+    pack(self, "age")
+)
 
-//sprite_index = choose(spr_gladiator, spr_gladiator2)
+/*
+saveable_variables[0] = pack(self, "name")
+saveable_variables[1] = pack(self, "weapon")
+saveable_variables[2] = pack(self, "max_hp")
+saveable_variables[3] = pack(self, "max_mana")
+saveable_variables[4] = pack(self, "strength")
+saveable_variables[5] = pack(self, "spell_power")
+saveable_variables[6] = pack(self, "spd")
+saveable_variables[7] = pack(self, "race")
+saveable_variables[8] = pack(self, "level")
+saveable_variables[9] = pack(self, "experience")
+saveable_variables[10] = pack(self, "wage")
+saveable_variables[11] = pack(self, "age")
+*/
 
-hover = false
+nof_saveable_variables = ds_list_size(saveable_variables)
+
 </string>
           </argument>
         </arguments>

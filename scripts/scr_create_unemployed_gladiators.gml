@@ -38,7 +38,15 @@ repeat(amount) {
     }
     
     gladiator.experience = irandom(gladiator.experience_needed)
-    
+
+    show_debug_message("before loop: " + string(ds_map_size(gladiator_data)))
+    for (var i = 0; i < gladiator.nof_saveable_variables; i++) {
+        var tuple = ds_list_find_value(gladiator.saveable_variables, i)
+        var var_name = tuple[1]
+        ds_map_add(gladiator_data, var_name, ref_get(ds_list_find_value(gladiator.saveable_variables, i)))
+    }
+        show_debug_message("after loop: " + string(ds_map_size(gladiator_data)))
+    /*
     ds_map_add(gladiator_data, "name", gladiator.name)
     ds_map_add(gladiator_data, "weapon", "Fists")
     ds_map_add(gladiator_data, "max_hp", gladiator.max_hp)
@@ -51,7 +59,7 @@ repeat(amount) {
     ds_map_add(gladiator_data, "experience", gladiator.experience)
     ds_map_add(gladiator_data, "wage", gladiator.wage)
     ds_map_add(gladiator_data, "age", gladiator.age)
-    
+    */
     instance_destroy(gladiator)
     
     ds_list_add(gladiators, gladiator_data)

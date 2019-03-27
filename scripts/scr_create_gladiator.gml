@@ -4,6 +4,7 @@ xx = argument1
 yy = argument2
 
 gladiator_data = argument0
+show_debug_message(argument0)
 
 race = ds_map_find_value(gladiator_data, "race")
 
@@ -15,9 +16,16 @@ if (race == "borssy") {
     //other races
 }
 
+for (var i = 0; i < gladiator.nof_saveable_variables; i++) {
+    //ds_map_add(gladiator_data, gladiator.saveable_variables[i][1], ref_get(gladiator, gladiator.saveable_variables[i]))
+    var tuple = ds_list_find_value(gladiator.saveable_variables, i)
+    var var_name = tuple[1]
+    //ref_set(gladiator.saveable_variables[i], ds_map_find_value(gladiator_data, var_name))
+    ref_set(ds_list_find_value(gladiator.saveable_variables, i), ds_map_find_value(gladiator_data, var_name))
+}
 
+/*
 gladiator.name = ds_map_find_value(gladiator_data, "name")
-gladiator.weapon = scr_create_weapon(ds_map_find_value(gladiator_data, "weapon"))
 gladiator.max_hp = ds_map_find_value(gladiator_data, "max_hp")
 gladiator.max_mana = ds_map_find_value(gladiator_data, "max_mana")
 gladiator.strength = ds_map_find_value(gladiator_data, "strength")
@@ -27,7 +35,8 @@ gladiator.level = ds_map_find_value(gladiator_data, "level")
 gladiator.experience = ds_map_find_value(gladiator_data, "experience")
 gladiator.wage = ds_map_find_value(gladiator_data, "wage")
 gladiator.age = ds_map_find_value(gladiator_data, "age")
-
+*/
+gladiator.weapon = scr_create_weapon(gladiator.weapon)
 gladiator.hp = gladiator.max_hp
 gladiator.mana = gladiator.max_mana
 

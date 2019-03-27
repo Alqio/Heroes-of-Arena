@@ -42,6 +42,9 @@
     <script>scripts\scr_save_gladiator.gml</script>
     <script>scripts\scr_notify.gml</script>
     <script>scripts\scr_gladiator_fight_bonuses.gml</script>
+    <script>scripts\pack.gml</script>
+    <script>scripts\ref_set.gml</script>
+    <script>scripts\ref_get.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>

@@ -55,7 +55,7 @@ spell_power_growth = 0.4
 
 expirience_needed = 80
 
-weapon = instance_create(x,y, obj_fists)
+weapon = "Fists"//instance_create(x,y, obj_fists)
 
 race = "borssy"
 
