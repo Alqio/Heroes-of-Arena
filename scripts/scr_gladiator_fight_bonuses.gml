@@ -15,6 +15,9 @@ for (var i = 0; i < ds_list_size(fight_bonuses); i++) {
     if (type == "defense") {
         bonus += fight_bonus.defense
     }
+    if (type == "speed" || type == "spd") {
+        bonus += fight_bonus.spd
+    } 
 }
 
 return bonus

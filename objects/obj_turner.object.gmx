@@ -163,7 +163,7 @@ for(i = 0; i &lt; ds_priority_size(copy); i++) {
 
 for(i = 0; i &lt; ds_priority_size(copy); i++) {
     gladiator = ds_priority_find_min(copy)
-    ds_priority_change_priority(copy, gladiator, gladiator.spd + gladiator.fight_bonuses.spd)
+    ds_priority_change_priority(copy, gladiator, gladiator.spd + scr_gladiator_fight_bonuses(gladiator, "spd"))
 }
 
 /*
