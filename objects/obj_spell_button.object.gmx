@@ -40,6 +40,34 @@
           <argument>
             <kind>1</kind>
             <string>icon = spr_fireball_icon
+action = scr_select_spell//src_select_spell
+
+spell = noone
+image_xscale = 1
+image_yscale = 1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.casting = spell.name
 
 </string>
           </argument>
@@ -65,16 +93,16 @@
             <kind>1</kind>
             <string>draw_set_font(font)
 
-
-draw_set_halign(fa_center)
-draw_set_valign(fa_middle)
+//draw_set_halign(fa_center)
+//draw_set_valign(fa_middle)
 
 draw_self()
-draw_sprite(icon, 0, x - sprite_get_width(sprite_index)/2+sprite_get_width(icon), y)
-draw_outline(text, x, y, color)
+scr_draw_spell_stats(spell, x - sprite_get_width(sprite_index)/2+4, y - sprite_get_height(sprite_index)/2+4, c_red)
 
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
+
+//TODO: fix damage to take also spell power stuff, a draw function for spells
 </string>
           </argument>
         </arguments>

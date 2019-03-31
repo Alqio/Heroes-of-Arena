@@ -20,6 +20,7 @@
       <sprite>sprites\spr_purepower_icon</sprite>
       <sprite>sprites\spr_spell_button</sprite>
     </sprites>
+    <sprite>sprites\sprite12</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -46,7 +47,16 @@
     <script>scripts\pack.gml</script>
     <script>scripts\ref_set.gml</script>
     <script>scripts\ref_get.gml</script>
-    <script>scripts\scr_create_spell_buttons.gml</script>
+    <script>scripts\draw_shadow.gml</script>
+    <scripts name="Spells">
+      <script>scripts\scr_create_spell.gml</script>
+      <script>scripts\scr_select_spell.gml</script>
+      <script>scripts\scr_create_spell_buttons.gml</script>
+      <script>scripts\scr_draw_spell_stats.gml</script>
+      <script>scripts\scr_deal_spell_damage.gml</script>
+      <script>scripts\scr_cast_spell_to.gml</script>
+      <script>scripts\scr_spell_damage.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>

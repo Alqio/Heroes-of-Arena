@@ -26,9 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>name = "spell name"
-cost = 4
+description = "this spell does damage"
+mana_cost = 4
 caster = noone
 target = noone
+level = 1
 </string>
           </argument>
         </arguments>

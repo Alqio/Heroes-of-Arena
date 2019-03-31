@@ -88,11 +88,93 @@ counter = 0
 
 for(xx = 0; xx &lt; 3; xx++) {
     for (yy = 0; yy &lt; 3; yy++) {
-        arrow = instance_create(32 + yy * 64, room_height/2 - 32 + 64*xx, obj_arrow) 
+        arrow = instance_create(32 + yy * 64, room_height/2 - 32 + 64*xx + 128, obj_arrow) 
         arrow.dir = counter
         arrow.image_index = counter
         counter++
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///variables
+
+global.turn_number = 1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.casting != "") {
+    //snap mouse to grid
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spell target
+if (global.casting != "") {
+    target = instance_position(mouse_x, mouse_y, obj_gladiator)
+    
+    //NOTE: if spells need to be able to target other things as well (walls, ground), do something to this 
+    if (target == noone) exit
+    
+    show_debug_message(target)
+    show_debug_message(object_get_name(target.object_index))
+    
+    scr_cast_spell_to(target)
 }
 </string>
           </argument>
@@ -166,6 +248,55 @@ for (i = 0; i &lt;= grid_height; i+= 32){
 //draw_outline("Current gladiator: " + turn.name + "#Actions left: " + string(turn.moves_left), 20, 20, c_red)
 //scr_draw_gladiator(turn, 20, 20, fnt_medium)
 scr_draw_gladiator(global.selected, 20, 20, false)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spells
+
+if (global.casting != "") {
+   draw_outline("Casting " + global.casting, mouse_x, mouse_y, c_red)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///reset casting
+global.casting = ""
 </string>
           </argument>
         </arguments>

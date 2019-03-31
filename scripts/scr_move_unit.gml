@@ -38,7 +38,7 @@ if (x_step == 0 && y_step == 0) {
     
     //collided with terrain, moving failed
     if (collision != noone && collision.solid) {
-        scr_log_command("Moving failed, blocked by terrain")
+        scr_notify("Moving failed, blocked by terrain")
         //show_message("j")
         return false
     }
