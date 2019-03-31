@@ -42,6 +42,7 @@
             <string>name = "Fireball"
 damage = 3
 spell_power_damage = 1
+description = "A fireball that deals damage to a single target"
 </string>
           </argument>
         </arguments>

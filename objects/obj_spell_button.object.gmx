@@ -43,7 +43,8 @@
 action = scr_select_spell//src_select_spell
 
 spell = noone
-
+image_xscale = 1
+image_yscale = 1
 </string>
           </argument>
         </arguments>
@@ -66,7 +67,7 @@ spell = noone
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.casting = text
+            <string>global.casting = spell.name
 
 </string>
           </argument>
@@ -92,17 +93,11 @@ spell = noone
             <kind>1</kind>
             <string>draw_set_font(font)
 
-draw_set_halign(fa_center)
-draw_set_valign(fa_middle)
+//draw_set_halign(fa_center)
+//draw_set_valign(fa_middle)
 
 draw_self()
-draw_sprite(icon, 0, x - sprite_get_width(sprite_index)/2+sprite_get_width(icon), y)
-draw_set_font(fnt_small)
-draw_shadow(spell.name, x, y, color)
-draw_set_font(fnt_tiny)
-draw_shadow(spell.description, x, y + 12, color)
-draw_shadow("Damage: " + string(spell.damage), x, y + 24, color)
-draw_shadow("Mana cost: " + string(spell.mana_cost), x, y + 36, color)
+scr_draw_spell_stats(spell, x - sprite_get_width(sprite_index)/2+4, y - sprite_get_height(sprite_index)/2+4, c_red)
 
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
