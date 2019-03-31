@@ -2,20 +2,13 @@
 target = argument0
 caster = global.turn
 spell = global.casting
-//show_debug_message(object_get_name(target))
-//show_debug_message(object_get_name(caster))
-//show_debug_message(spell)
 
-spell_instance = scr_create_spell(spell)
-level = 1
+show_debug_message("target: " + target.name)
+show_debug_message("caster: " + caster.name)
+show_debug_message(spell)
 
-for (var i = 0; i < caster.number_of_spells; i++) {
-    spell_pair = caster.spells[i]
-    if (spell_pair[0] == spell) {
-        level = spell_pair[1]
-        break
-    }
-}
+spell_instance = scr_create_spell(spell, caster)
+
 spell_instance.level = level
 spell_instance.target = target
 spell_instance.caster = caster

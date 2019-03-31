@@ -51,6 +51,7 @@
     <script>scripts\scr_create_spell.gml</script>
     <script>scripts\scr_create_spell_buttons.gml</script>
     <script>scripts\scr_deal_spell_damage.gml</script>
+    <script>scripts\draw_shadow.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>

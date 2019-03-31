@@ -142,12 +142,14 @@ for(xx = 0; xx &lt; 3; xx++) {
           <argument>
             <kind>1</kind>
             <string>///Spell target
-//target = 
 
-//show_debug_message(instance_position(mouse_x, mouse_y, obj_gladiator))
 target = instance_position(mouse_x, mouse_y, obj_gladiator)
+
+//NOTE: if spells need to be able to target other things as well (walls, ground), do something to this 
+if (target == noone) exit
+
 show_debug_message(target)
-show_debug_message(object_get_name(target))
+show_debug_message(object_get_name(target.object_index))
 
 scr_cast_spell_to(target)
 

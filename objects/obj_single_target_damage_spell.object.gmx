@@ -28,6 +28,7 @@
             <string>event_inherited()
 
 damage = 1
+spell_power_damage = 1
 </string>
           </argument>
         </arguments>
@@ -51,9 +52,14 @@ damage = 1
           <argument>
             <kind>1</kind>
             <string>///Spell action
-scr_log_command(caster.name + " casts " + spell.name)
-scr_deal_spell_damage(id, caster, target)
+scr_log_command(caster.name + " casts " + name)
+dmg = (damage * level) + spell_power_damage * caster.spell_power
 
+scr_deal_spell_damage(id, caster, target, dmg)
+
+caster.mana -= mana_cost
+
+global.casting = ""
 </string>
           </argument>
         </arguments>
