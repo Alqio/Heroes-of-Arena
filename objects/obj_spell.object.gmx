@@ -29,6 +29,7 @@
 cost = 4
 caster = noone
 target = noone
+level = 1
 </string>
           </argument>
         </arguments>

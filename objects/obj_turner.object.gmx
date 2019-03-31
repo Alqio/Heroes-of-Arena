@@ -128,7 +128,7 @@ ds_priority_copy(copy, gladiators)
 
 with(obj_spell_button) instance_destroy()
 
-scr_create_spell_buttons(turn, 128, 480)
+scr_create_spell_buttons(turn, 64+32, 320)
 </string>
           </argument>
         </arguments>

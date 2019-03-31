@@ -50,8 +50,11 @@ race = "borssy"
 
 max_number_of_spells = 4
 number_of_spells = 2
-spells[0] = "Fireball"
-spells[1] = "True Power"
+spells[0] = pack("Fireball", 1)
+spells[1] = pack("True Power", 1)
+
+//spells = ds_list_create()
+
 </string>
           </argument>
         </arguments>
@@ -282,7 +285,9 @@ nof_saveable_variables = ds_list_size(saveable_variables)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.selected = id
+            <string>if (global.casting == "") {
+    global.selected = id
+}
 </string>
           </argument>
         </arguments>

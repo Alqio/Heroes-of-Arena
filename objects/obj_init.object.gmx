@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -29,6 +29,10 @@
 global.turn = noone
 global.log = noone
 global.selected = noone
+
+global.cursor_icon = cursor_sprite
+
+global.casting = ""
 
 global.gold = 1000
 
