@@ -296,7 +296,7 @@ if (global.casting != "") {
           <argument>
             <kind>1</kind>
             <string>///reset casting
-global.casting = ""
+reset_casting()
 </string>
           </argument>
         </arguments>
