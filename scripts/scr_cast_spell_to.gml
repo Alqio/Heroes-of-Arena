@@ -9,7 +9,7 @@ show_debug_message(spell)
 
 spell_instance = scr_create_spell(spell, caster)
 
-spell_instance.level = level
+//spell_instance.level = level //NOTE: This worked somehow? level shouldn't be defined here
 spell_instance.target = target
 spell_instance.caster = caster
 with (spell_instance) event_user(0)

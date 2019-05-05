@@ -55,9 +55,9 @@
       <script>scripts\scr_draw_spell_stats.gml</script>
       <script>scripts\scr_deal_spell_damage.gml</script>
       <script>scripts\scr_cast_spell_to.gml</script>
+      <script>scripts\reset_casting.gml</script>
       <script>scripts\scr_spell_damage.gml</script>
     </scripts>
-    <script>scripts\reset_casting.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
