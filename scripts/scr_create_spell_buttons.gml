@@ -14,7 +14,8 @@ repeat(gladiator.number_of_spells) {
     spell_button.text = spell_pair[0]
     spell_button.spell = spell
     
-    with(spell_button) event_user(0)
+    
+    with(spell_button) event_user(0) //MIKÄ HOMMA?
 
     i++
 }

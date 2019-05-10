@@ -287,6 +287,15 @@ nof_saveable_variables = ds_list_size(saveable_variables)
             <kind>1</kind>
             <string>if (global.casting == "") {
     global.selected = id
+    
+    if (global.fighting) {
+        
+        with (obj_spell_button) instance_destroy()
+        
+        scr_create_spell_buttons(id, 64+32, 320)
+    }
+    
+    
 }
 </string>
           </argument>

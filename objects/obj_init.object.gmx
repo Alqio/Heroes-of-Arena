@@ -34,6 +34,8 @@ global.cursor_icon = cursor_sprite
 
 global.turn_number = 1
 
+global.fighting = false
+
 global.casting = ""
 
 global.gold = 1000

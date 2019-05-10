@@ -117,6 +117,7 @@ for(xx = 0; xx &lt; 3; xx++) {
             <string>///variables
 
 global.turn_number = 1
+global.fighting = true
 </string>
           </argument>
         </arguments>
